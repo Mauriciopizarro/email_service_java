@@ -19,7 +19,7 @@ public class Consumer {
     @RabbitListener(queues = "${rabbitmq.sign.up.email}")
     public  void receive(@Payload String message){
         emailService.sendNewMail(message, "Register successfully", "Thanks for register");
-        logger.error("message received and email sent");
+        logger.info("Message received and email sent");
     }
 
 }
